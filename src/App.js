@@ -1,10 +1,11 @@
 
 import './App.css';
 import {createBrowserRouter , RouterProvider} from "react-router-dom";
-import Home from './components/Pages/Home';
-import Contact from './components/Pages/Contact';
-import Error from './components/Pages/Error';
-import Root from './components/Pages/PageRoot/Root';
+import Home from './Pages/Home';
+import Contact from './Pages/Contact';
+import Error from './Pages/Error';
+import Root from './Pages/PageRoot/Root';
+import ContactDeailt from './Pages/ContactDeailt';
 
 
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children:[
       {path:"/", element: <Home/>},
       {path:"/contact", element: <Contact/>},
+      {path:"/contact/:id", element: <ContactDeailt/>},
     ]
   }
   

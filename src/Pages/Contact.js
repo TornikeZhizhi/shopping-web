@@ -5,7 +5,8 @@ const Contact = () => {
     return (
         <div>
             contact
-            <Link to="/">Home</Link>
+            <Link to="/contact/სინეგო">სინეგო</Link>
+            <Link to="/contact/გინევო">გინევო</Link>
         </div>
     );
 };
