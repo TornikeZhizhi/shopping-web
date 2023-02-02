@@ -6,6 +6,7 @@ import Contact from './Pages/Contact';
 import Error from './Pages/Error';
 import Root from './Pages/PageRoot/Root';
 import ContactDeailt from './Pages/ContactDeailt';
+import Products from './Pages/Products';
 
 
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     errorElement:<Error/>,
     children:[
       {path:"/", element: <Home/>},
+      {path:"/products/:id", element: <Products/>},
       {path:"/contact", element: <Contact/>},
       {path:"/contact/:id", element: <ContactDeailt/>},
     ]

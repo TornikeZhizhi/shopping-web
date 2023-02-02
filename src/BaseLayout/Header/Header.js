@@ -53,53 +53,53 @@ const Header = () => {
                      </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact" 
+                    <NavLink to="/products/smartphones" 
                         className={({isActive})=>
                         isActive ? classes.active : undefined
                      }
                    
                      >
-                      Women
+                      Smartphones
                      </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact" 
+                    <NavLink to="/products/home-decoration" 
                         className={({isActive})=>
                         isActive ? classes.active : undefined
                      }
                    
                      >
-                      Man
+                      Home Decoration
                      </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact" 
+                    <NavLink to="/products/womens-dresses" 
                         className={({isActive})=>
                         isActive ? classes.active : undefined
                      }
                    
                      >
-                      Technics
+                      Dresses
                      </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact" 
+                    <NavLink to="/products/mens-shoes" 
                         className={({isActive})=>
                         isActive ? classes.active : undefined
                      }
                    
                      >
-                      Shoes
+                      Men Shoes
                      </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact" 
+                    <NavLink to="/products/motorcycle" 
                         className={({isActive})=>
                         isActive ? classes.active : undefined
                      }
                    
                      >
-                      Jevelery
+                      Motorcycle
                      </NavLink>
                 </li>
 
