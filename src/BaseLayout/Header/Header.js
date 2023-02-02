@@ -4,6 +4,8 @@ import { Link, NavLink } from 'react-router-dom';
 import HeaderLogo from "../../assets/imgs/logo.svg";
 import SearchIcon from "../../assets/imgs/search_icon.svg";
 import CartIcon from "../../assets/imgs/cartIcon.svg";
+import heart from "../../assets/imgs/heart.svg";
+import heart_red from "../../assets/imgs/heart_red.svg";
 import classes from "./header.module.css";
 
 const Header = () => {
@@ -25,8 +27,12 @@ const Header = () => {
                         }} onFocus={()=>{
                             setFocus(true)
                         }} type="text" placeholder="Search" />
-                        
+
                         <div className='header_search_close'></div>
+                    </div>
+                    <div className={classes.favourite_box}>
+                        <img src={heart}/>
+                        {/* <img src={heart_red}/> */}
                     </div>
                     <div className={classes.cart}>
                         <img src={CartIcon} alt=""/>

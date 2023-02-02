@@ -89,3 +89,8 @@
     color: #000;
 }
 
+
+
+.favourite_box img{
+    cursor: pointer;
+}
