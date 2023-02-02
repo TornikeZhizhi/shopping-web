@@ -145,3 +145,21 @@
     }
   }
   
+
+  @media only screen and (max-width: 992px) {
+    .products_wrapper {
+        width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 50px;
+        background-color: #fff;
+    }
+    .products_container {
+        padding: 14px 20px 50px;
+        min-height: 50vh;
+    }
+    .products_wrapper {
+
+        margin-bottom: 15px;
+     
+    }
+  }

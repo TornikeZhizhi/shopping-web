@@ -47,3 +47,31 @@
     font-size: 52px;
     letter-spacing: 2px;
 }
+
+
+@media only screen and (max-width: 992px) {
+   
+    .category_box_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 14px;
+        width: 49%;
+        margin-right: 0%;
+    }
+    .categories_title h2 {
+        font-size: 29px;
+        letter-spacing: 0px;
+    }
+    .categories_wrapper {
+        justify-content: space-between;
+    }
+    .car_title {
+        margin-top: 2px;
+        text-align: center;
+        font-size: 17px;
+    }
+    .category_container {
+       
+        margin: 20px auto 50px;
+    }
+}
