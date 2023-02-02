@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import HomeSlider from '../components/HomeSlider/HomeSlider';
 
 
 
@@ -9,13 +10,15 @@ const Home = () => {
 
     return (
         <div>
-            i am home
+{/*        
             <button onClick={()=>{
                 navigate("/contact")
             }}>
              to contact
 
-            </button>
+            </button> */}
+
+            <HomeSlider/>
         </div>
     );
 };

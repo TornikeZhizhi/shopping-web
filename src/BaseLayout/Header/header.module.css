@@ -1,6 +1,6 @@
 
 .header {
-    padding: 10px 0px;
+    padding: 10px 0px 0;
 }
 .header_logo img{
 
@@ -38,7 +38,13 @@
     position: relative;
     max-width: 316px;
     width: 100%;
+    transition: all .4s;
 }
+
+.header_search.active {
+    max-width: 400px;
+}
+
 .header_search img {
     position: absolute;
     top: 50%;
@@ -61,6 +67,9 @@
 .cart_wrapper {
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+
 }
 .cart {
     cursor: pointer;
@@ -79,3 +88,4 @@
     font-size: 10px;
     color: #000;
 }
+

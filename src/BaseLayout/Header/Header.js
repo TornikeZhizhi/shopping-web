@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 // import "./Header.css";
 import HeaderLogo from "../../assets/imgs/logo.svg";
@@ -7,6 +7,8 @@ import CartIcon from "../../assets/imgs/cartIcon.svg";
 import classes from "./header.module.css";
 
 const Header = () => {
+
+    const [focus, setFocus] = useState(false)
     return (
         <div className={classes.header}>
             
@@ -15,9 +17,15 @@ const Header = () => {
                     <img src={HeaderLogo}/>
                 </div>
                 <div className={classes.cart_wrapper}>
-                    <div className={classes.header_search}>
+                    <div className={classes.header_search + " " + (focus ? classes.active : "")}>
                         <img src={SearchIcon} alt="search_icon"/>
-                        <input type="text" placeholder="Search" />
+
+                        <input onBlur={()=>{
+                           setFocus(false)
+                        }} onFocus={()=>{
+                            setFocus(true)
+                        }} type="text" placeholder="Search" />
+                        
                         <div className='header_search_close'></div>
                     </div>
                     <div className={classes.cart}>

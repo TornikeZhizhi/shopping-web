@@ -1,0 +1,20 @@
+.home_slider {
+
+    height:400px;
+}
+
+.home_slider_img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+.home_slider .swiper-pagination {
+    background-color: #000 !important;
+}
+
+.home_slider .swiper-pagination-bullet-active {
+    background-color: #000 !important;
+}
