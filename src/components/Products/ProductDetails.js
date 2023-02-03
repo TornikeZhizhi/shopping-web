@@ -17,25 +17,28 @@ const ProductDetails = (props) => {
         setHeartAnime(!heartAnime);
 
 
-        let favArray = JSON.parse(localStorage.getItem("favouriteData"))
+        let favArray = JSON.parse(localStorage.getItem("favouriteData"));
 
-       
+
         if (favArray == null){
             localStorage.setItem('favouriteData', JSON.stringify([props.data]));
         }else {
-
             if(!checkArrayIsNew(favArray,props.data.id)){
                 favArray.push(props.data)
                 localStorage.setItem('favouriteData', JSON.stringify(favArray));
-            }
+            }else {
+                const delData =favArray.filter((item)=>{
+                    return item.id !== props.data.id;
+                })
+                localStorage.setItem('favouriteData', JSON.stringify(delData));
 
+            }
         }
     }
 
     const checkArrayIsNew = (favArray, id)=>{
         return favArray.some(elem => elem.id == id)
     }
-
 
     return (
     <div className='products_wrapper'>
