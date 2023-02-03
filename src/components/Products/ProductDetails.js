@@ -1,7 +1,7 @@
 import React from 'react';
 
 import "./ProductsComponent.css";
-
+import star from "../../assets/imgs/star.svg";
 const ProductDetails = (props) => {
     console.log(props.data)
 
@@ -9,7 +9,12 @@ const ProductDetails = (props) => {
     <div className='products_wrapper'>
         <div className='products_img'>
             <img src={props.data.thumbnail} alt=''/>
-            <div className='product_rating'>{props.data.rating}</div>
+            <div className='product_rating'>
+                <span>
+                    {props.data.rating} 
+                </span>
+                <img src={star} alt=""/>
+            </div>
             <div className='product_favourite'>
 
             </div>

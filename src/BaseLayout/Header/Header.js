@@ -16,7 +16,9 @@ const Header = () => {
             
             <div className={classes.header_up_wrapper}>
                 <div className={classes.header_logo}>
-                    <img src={HeaderLogo}/>
+                    <Link to="/">
+                        <img src={HeaderLogo}/>
+                    </Link>
                 </div>
                 <div className={classes.cart_wrapper}>
                     <div className={classes.header_search + " " + (focus ? classes.active : "")}>

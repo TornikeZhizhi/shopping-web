@@ -27,7 +27,8 @@
 }
 .header_nav a.active {
 
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  color: #ffc107;
 }
 
 
