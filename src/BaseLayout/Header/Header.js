@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 // import "./Header.css";
 import HeaderLogo from "../../assets/imgs/logo.svg";
@@ -7,12 +7,13 @@ import CartIcon from "../../assets/imgs/cartIcon.svg";
 import heart from "../../assets/imgs/heart.svg";
 import heart_red from "../../assets/imgs/heart_red.svg";
 import classes from "./header.module.css";
+import { FavouriteTheme } from '../../Contexts/FavouritesContext';
 
 const Header = () => {
 
-
-
-    const [focus, setFocus] = useState(false);
+const ctx = useContext(FavouriteTheme)
+console.log(ctx)
+const [focus, setFocus] = useState(false);
     
     return (
         <div className={classes.header}>
@@ -37,7 +38,7 @@ const Header = () => {
                     </div>
                     <div className={classes.favourite_box}>
                         <img src={heart}/>
-                        <span>0</span>
+                        <span>{ctx.favItemQuantity}</span>
                         {/* <img src={heart_red}/> */}
                     </div>
                     <div className={classes.cart}>

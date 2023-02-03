@@ -23,9 +23,7 @@ const ProductDetails = (props) => {
       
     }
 
-    const checkArrayIsNew = (favArray, id)=>{
-        return favArray.some(elem => elem.id == id)
-    }
+  
 
     return (
     <div className='products_wrapper'>
