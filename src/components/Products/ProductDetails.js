@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import "./ProductsComponent.css";
 import star from "../../assets/imgs/star.svg";
 const ProductDetails = (props) => {
     console.log(props.data)
+
+
+    const [ heartAnime, setHeartAnime] = useState(false)
 
     return (
     <div className='products_wrapper'>
@@ -16,7 +19,15 @@ const ProductDetails = (props) => {
                 <img src={star} alt=""/>
             </div>
             <div className='product_favourite'>
+            <div onClick={()=>{
+                setHeartAnime(!heartAnime)
+            }} class={`m-favorite ` + (heartAnime ? " -active" : " ")}>
+                <div class="m-favorite__icon"></div>
 
+                <span class="m-favorite__smallIcon"></span>
+                <span class="m-favorite__smallIcon"></span>
+                <span class="m-favorite__smallIcon"></span>
+            </div>
             </div>
         </div>
         <div className='product_body'>
