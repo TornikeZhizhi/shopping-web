@@ -2,11 +2,40 @@ import React, { useState } from 'react';
 
 import "./ProductsComponent.css";
 import star from "../../assets/imgs/star.svg";
+
+
+
 const ProductDetails = (props) => {
-    console.log(props.data)
+   
+    const [ heartAnime, setHeartAnime] = useState(false);
+
+    // const [favArray, setFavArray ] = useState(localStorage.getItem("favouriteData"))
+
+  
+    
+    const addFvouriteHandler = ()=>{
+        setHeartAnime(!heartAnime);
 
 
-    const [ heartAnime, setHeartAnime] = useState(false)
+        let favArray = JSON.parse(localStorage.getItem("favouriteData"))
+
+       
+        if (favArray == null){
+            localStorage.setItem('favouriteData', JSON.stringify([props.data]));
+        }else {
+
+            if(!checkArrayIsNew(favArray,props.data.id)){
+                favArray.push(props.data)
+                localStorage.setItem('favouriteData', JSON.stringify(favArray));
+            }
+
+        }
+    }
+
+    const checkArrayIsNew = (favArray, id)=>{
+        return favArray.some(elem => elem.id == id)
+    }
+
 
     return (
     <div className='products_wrapper'>
@@ -18,15 +47,13 @@ const ProductDetails = (props) => {
                 </span>
                 <img src={star} alt=""/>
             </div>
-            <div className='product_favourite'>
-            <div onClick={()=>{
-                setHeartAnime(!heartAnime)
-            }} class={`m-favorite ` + (heartAnime ? " -active" : " ")}>
-                <div class="m-favorite__icon"></div>
+            <div className='product_favourite' onClick={addFvouriteHandler}>
+            <div  className={`m-favorite ` + (heartAnime ? " -active" : " ")}>
+                <div className="m-favorite__icon"></div>
 
-                <span class="m-favorite__smallIcon"></span>
-                <span class="m-favorite__smallIcon"></span>
-                <span class="m-favorite__smallIcon"></span>
+                <span className="m-favorite__smallIcon"></span>
+                <span className="m-favorite__smallIcon"></span>
+                <span className="m-favorite__smallIcon"></span>
             </div>
             </div>
         </div>

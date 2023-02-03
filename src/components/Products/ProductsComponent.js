@@ -21,29 +21,17 @@ const ProductsComponent = () => {
           
     },[params])
 
-    // console.log(isLoading)
-    // if(isLoading){
-    //     return  (
-    //     <div class="preloader">
-    //         <div class="load-1"></div>
-    //         <div class="load-2"></div>
-    //         <div class="load-3"></div>
-    //         <div class="load-4"></div>
-    //         <div class="load-5"></div>
-    //       </div>
-    //     )
-    // }
     return (
         <>
         <div className='products_container'>
             {isLoading
              ? 
-            <div class="preloader">
-                <div class="load-1"></div>
-                <div class="load-2"></div>
-                <div class="load-3"></div>
-                <div class="load-4"></div>
-                <div class="load-5"></div>
+            <div className="preloader">
+                <div className="load-1"></div>
+                <div className="load-2"></div>
+                <div className="load-3"></div>
+                <div className="load-4"></div>
+                <div className="load-5"></div>
             </div> 
             :
             data.products?.map((data,index)=>{
