@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import Error from './Pages/Error';
 import Root from './Pages/PageRoot/Root';
 import Products from './Pages/Products';
+import FavouriteContext from './Contexts/FavouritesContext';
 
 
 
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-    <RouterProvider router={router}/>
+    <FavouriteContext>
+      <RouterProvider router={router}/>
+    </FavouriteContext>
     </>
   );
 }

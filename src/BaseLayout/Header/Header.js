@@ -10,7 +10,10 @@ import classes from "./header.module.css";
 
 const Header = () => {
 
-    const [focus, setFocus] = useState(false)
+
+
+    const [focus, setFocus] = useState(false);
+    
     return (
         <div className={classes.header}>
             
@@ -34,6 +37,7 @@ const Header = () => {
                     </div>
                     <div className={classes.favourite_box}>
                         <img src={heart}/>
+                        <span>0</span>
                         {/* <img src={heart_red}/> */}
                     </div>
                     <div className={classes.cart}>

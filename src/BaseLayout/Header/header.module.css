@@ -91,7 +91,21 @@
 }
 
 
-
+.favourite_box {
+    position: relative;
+}
 .favourite_box img{
     cursor: pointer;
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.favourite_box span {
+    position: absolute;
+    top: 17px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: red;
+    font-size: 12px;
 }

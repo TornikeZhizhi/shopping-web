@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import "./ProductsComponent.css";
 import star from "../../assets/imgs/star.svg";
+import { FavouriteTheme } from '../../Contexts/FavouritesContext';
 
 
 
 const ProductDetails = (props) => {
    
+
+    const ctx = useContext(FavouriteTheme)
     const [ heartAnime, setHeartAnime] = useState(false);
 
     // const [favArray, setFavArray ] = useState(localStorage.getItem("favouriteData"))
@@ -16,24 +19,8 @@ const ProductDetails = (props) => {
     const addFvouriteHandler = ()=>{
         setHeartAnime(!heartAnime);
 
-
-        let favArray = JSON.parse(localStorage.getItem("favouriteData"));
-
-
-        if (favArray == null){
-            localStorage.setItem('favouriteData', JSON.stringify([props.data]));
-        }else {
-            if(!checkArrayIsNew(favArray,props.data.id)){
-                favArray.push(props.data)
-                localStorage.setItem('favouriteData', JSON.stringify(favArray));
-            }else {
-                const delData =favArray.filter((item)=>{
-                    return item.id !== props.data.id;
-                })
-                localStorage.setItem('favouriteData', JSON.stringify(delData));
-
-            }
-        }
+        ctx.addFavToLocalStorage(props.data)
+      
     }
 
     const checkArrayIsNew = (favArray, id)=>{
