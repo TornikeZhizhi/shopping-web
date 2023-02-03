@@ -1,16 +1,24 @@
 
-import React, {Component, createContext, useState} from "react";
+import React, {Component, createContext, useEffect, useState} from "react";
 
 export const FavouriteTheme = createContext();
 
 const FavouriteContext = (props)=> {
 
+  
  const [favItemQuantity, setFavItemQuantity] = useState(0)
 
+    // check on load quantity
+    useEffect(()=>{
+        if(!JSON.parse(localStorage.getItem("favouriteData"))){
+            setFavItemQuantity(0)
+        }else {
+            setFavItemQuantity(JSON.parse(localStorage.getItem("favouriteData")).length)
+        }
+    },[])
 
   const addFavToLocalStorage = (data)=>{
           
-
     let favArray = JSON.parse(localStorage.getItem("favouriteData"));
         if (favArray == null){
             localStorage.setItem('favouriteData', JSON.stringify([data]));
