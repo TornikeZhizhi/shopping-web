@@ -15,3 +15,16 @@
     display: none;
 }
 
+
+@media only screen and (max-width: 992px) {
+
+    .swiper-pagination-bullet-active {
+        width: 29px !important;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 6px;
+    }
+}
+ 
