@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import "./ProductsComponent.css";
 import star from "../../assets/imgs/star.svg";
@@ -12,18 +12,21 @@ const ProductDetails = (props) => {
     const ctx = useContext(FavouriteTheme)
     const [ heartAnime, setHeartAnime] = useState(false);
 
-    // const [favArray, setFavArray ] = useState(localStorage.getItem("favouriteData"))
-
-  
     
+
     const addFvouriteHandler = ()=>{
         setHeartAnime(!heartAnime);
-
         ctx.addFavToLocalStorage(props.data)
-      
+
     }
 
-  
+    useEffect(()=>{
+        // add hearAnime on load
+        let favArray = JSON.parse(localStorage.getItem("favouriteData"));
+        if(favArray?.some(elem => elem.title == props.data.title)){
+            setHeartAnime(true)
+        }
+    },[])
 
     return (
     <div className='products_wrapper'>

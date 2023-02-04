@@ -6,7 +6,8 @@ export const FavouriteTheme = createContext();
 const FavouriteContext = (props)=> {
 
   
- const [favItemQuantity, setFavItemQuantity] = useState(0)
+ const [favItemQuantity, setFavItemQuantity] = useState(0);
+ 
 
     // check on load quantity
     useEffect(()=>{
@@ -24,7 +25,7 @@ const FavouriteContext = (props)=> {
             localStorage.setItem('favouriteData', JSON.stringify([data]));
 
             // local storage item quantity add
-            setFavItemQuantity(prev => prev + 1)
+            setFavItemQuantity(prev => prev + 1);
         }else {
 
             // check if element is already in array
@@ -35,7 +36,7 @@ const FavouriteContext = (props)=> {
                 localStorage.setItem('favouriteData', JSON.stringify(favArray));
 
                   // local storage item quantity add
-                setFavItemQuantity(prev => prev + 1)
+                setFavItemQuantity(prev => prev + 1);
             }else {
 
                 // delete element in local storage
@@ -45,7 +46,7 @@ const FavouriteContext = (props)=> {
                 localStorage.setItem('favouriteData', JSON.stringify(delData));
 
                 // local storage item quantity delete
-                setFavItemQuantity(prev => prev - 1)
+                setFavItemQuantity(prev => prev - 1);
             }
         }
 
