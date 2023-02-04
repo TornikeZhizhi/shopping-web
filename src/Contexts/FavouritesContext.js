@@ -7,19 +7,23 @@ const FavouriteContext = (props)=> {
 
   
  const [favItemQuantity, setFavItemQuantity] = useState(0);
- 
+ const [favItem, setFavItem] = useState([])
 
     // check on load quantity
     useEffect(()=>{
         if(!JSON.parse(localStorage.getItem("favouriteData"))){
             setFavItemQuantity(0)
         }else {
-            setFavItemQuantity(JSON.parse(localStorage.getItem("favouriteData")).length)
+            setFavItemQuantity(JSON.parse(localStorage.getItem("favouriteData")).length);
+            setFavItem(JSON.parse(localStorage.getItem("favouriteData")))
         }
     },[])
 
   const addFavToLocalStorage = (data)=>{
           
+  
+
+
     let favArray = JSON.parse(localStorage.getItem("favouriteData"));
         if (favArray == null){
             localStorage.setItem('favouriteData', JSON.stringify([data]));
@@ -49,7 +53,9 @@ const FavouriteContext = (props)=> {
                 setFavItemQuantity(prev => prev - 1);
             }
         }
-
+        
+  
+        setFavItem(JSON.parse(localStorage.getItem("favouriteData")))
 
     }
 
@@ -58,7 +64,9 @@ const FavouriteContext = (props)=> {
     }
 
 return(
-    <FavouriteTheme.Provider value={{favItemQuantity:favItemQuantity,
+    <FavouriteTheme.Provider value={{
+        favItem:favItem,
+        favItemQuantity:favItemQuantity,
         addFavToLocalStorage:addFavToLocalStorage}}>
         {props.children}
     </FavouriteTheme.Provider>

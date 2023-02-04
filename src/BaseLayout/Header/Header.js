@@ -4,16 +4,24 @@ import { Link, NavLink } from 'react-router-dom';
 import HeaderLogo from "../../assets/imgs/logo.svg";
 import SearchIcon from "../../assets/imgs/search_icon.svg";
 import CartIcon from "../../assets/imgs/cartIcon.svg";
-import heart from "../../assets/imgs/heart.svg";
-import heart_red from "../../assets/imgs/heart_red.svg";
+
 import classes from "./header.module.css";
-import { FavouriteTheme } from '../../Contexts/FavouritesContext';
+
+import  axios from "axios";
+import HeaderFavourite from '../../components/HeaderFavourite/HeaderFavourite';
 
 const Header = () => {
 
-const ctx = useContext(FavouriteTheme)
+
 
 const [focus, setFocus] = useState(false);
+
+
+const searchHandler =()=>{
+    // alert("s")
+    axios.get('https://dummyjson.com/products/search?q=bag')
+        .then(res => console.log(res))
+}
     
     return (
         <div className={classes.header}>
@@ -32,15 +40,11 @@ const [focus, setFocus] = useState(false);
                            setFocus(false)
                         }} onFocus={()=>{
                             setFocus(true)
-                        }} type="text" placeholder="Search" />
+                        }} onClick={searchHandler} type="text" placeholder="Search" />
 
                         <div className='header_search_close'></div>
                     </div>
-                    <div className={classes.favourite_box}>
-                        <img src={heart}/>
-                        <span>{ctx.favItemQuantity}</span>
-                        {/* <img src={heart_red}/> */}
-                    </div>
+                        <HeaderFavourite/>
                     <div className={classes.cart}>
                         <img src={CartIcon} alt=""/>
                         <span>0</span>
