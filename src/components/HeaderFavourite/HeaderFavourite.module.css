@@ -38,6 +38,7 @@
 .favourite_data_body img {
     object-fit: cover;
     width: 40%;
+    flex: 0 0 40%;
     height: 96px;
     border-radius: 3px;
 }

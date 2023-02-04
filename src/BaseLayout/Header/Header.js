@@ -2,26 +2,23 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 // import "./Header.css";
 import HeaderLogo from "../../assets/imgs/logo.svg";
-import SearchIcon from "../../assets/imgs/search_icon.svg";
+
 import CartIcon from "../../assets/imgs/cartIcon.svg";
 
 import classes from "./header.module.css";
 
-import  axios from "axios";
+
 import HeaderFavourite from '../../components/HeaderFavourite/HeaderFavourite';
+import HeaderSearch from '../../components/HeaderSearch/HeaderSearch';
 
 const Header = () => {
 
 
 
-const [focus, setFocus] = useState(false);
 
 
-const searchHandler =()=>{
-    // alert("s")
-    axios.get('https://dummyjson.com/products/search?q=bag')
-        .then(res => console.log(res))
-}
+
+
     
     return (
         <div className={classes.header}>
@@ -33,17 +30,7 @@ const searchHandler =()=>{
                     </Link>
                 </div>
                 <div className={classes.cart_wrapper}>
-                    <div className={classes.header_search + " " + (focus ? classes.active : "")}>
-                        <img src={SearchIcon} alt="search_icon"/>
-
-                        <input onBlur={()=>{
-                           setFocus(false)
-                        }} onFocus={()=>{
-                            setFocus(true)
-                        }} onClick={searchHandler} type="text" placeholder="Search" />
-
-                        <div className='header_search_close'></div>
-                    </div>
+                        <HeaderSearch/>
                         <HeaderFavourite/>
                     <div className={classes.cart}>
                         <img src={CartIcon} alt=""/>
