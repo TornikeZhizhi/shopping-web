@@ -1,15 +1,9 @@
 import React from 'react';
+import SearchComponent from '../components/SearchComponent/SearchComponent';
 
 const Search = () => {
-
-
-    // axios.get('https://dummyjson.com/products/search?q=bag')
-    //         .then(res => console.log(res))
-
     return (
-        <div>
-                search
-        </div>
+        <SearchComponent/>
     );
 };
 
