@@ -27,3 +27,14 @@
   font-display: swap;
 }
 
+body {
+  padding-top: 130px;
+}
+
+
+@media only screen and (max-width: 992px) {
+  body {
+    padding-top: 110px;
+  }
+  
+}

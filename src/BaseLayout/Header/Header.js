@@ -12,7 +12,7 @@ import { FavouriteTheme } from '../../Contexts/FavouritesContext';
 const Header = () => {
 
 const ctx = useContext(FavouriteTheme)
-console.log(ctx)
+
 const [focus, setFocus] = useState(false);
     
     return (
