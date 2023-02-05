@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import "./ProductsComponent.css";
 import star from "../../assets/imgs/star.svg";
 import { FavouriteTheme } from '../../Contexts/FavouritesContext';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -30,13 +31,18 @@ const ProductDetails = (props) => {
 
     return (
     <div className='products_wrapper'>
+
         <div className='products_img'>
-            <img src={props.data.thumbnail} alt=''/>
+              <NavLink to={`/productsInner/${props.data.id}`}>
+                  <img src={props.data.thumbnail} alt=''/>
+              </NavLink>
             <div className='product_rating'>
                 <span>
                     {props.data.rating} 
                 </span>
-                <img src={star} alt=""/>
+       
+                    <img src={star} alt=""/>
+         
             </div>
             <div className='product_favourite' onClick={addFvouriteHandler}>
             <div  className={`m-favorite ` + (heartAnime ? " -active" : " ")}>
@@ -49,7 +55,9 @@ const ProductDetails = (props) => {
             </div>
         </div>
         <div className='product_body'>
-            <div className='product_title'>{props.data.title}</div>
+            <NavLink to={`/productsInner/${props.data.id}`}>
+                <div className='product_title'>{props.data.title}</div>
+            </NavLink>
             <div className='product_text'><p>{props.data.description.slice(0,50)}...</p></div>
             <div className='product_price'>{props.data.price} $</div>
         </div>

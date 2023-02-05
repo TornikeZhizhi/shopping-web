@@ -7,6 +7,7 @@ import Root from './Pages/PageRoot/Root';
 import Products from './Pages/Products';
 import FavouriteContext from './Contexts/FavouritesContext';
 import Search from './Pages/Search';
+import ProductsInner from './Pages/ProductsInner';
 
 
 
@@ -17,7 +18,8 @@ const router = createBrowserRouter([
     children:[
       {path:"/", element: <Home/>},
       {path:"/products/:id", element: <Products/>},
-      {path:"/search/:id", element: <Search/>}
+      {path:"/productsInner/:id", element: <ProductsInner/>},
+      {path:"/search/:id", element: <Search/>},
   
     ]
   }

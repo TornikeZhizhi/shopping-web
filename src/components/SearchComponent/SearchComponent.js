@@ -20,7 +20,19 @@ const SearchComponent = () => {
         })
     },[params.id]);
 
-   
+    
+    if(searchLoading){
+        return (
+            <div className="preloader">
+                <div className="load-1"></div>
+                <div className="load-2"></div>
+                <div className="load-3"></div>
+                <div className="load-4"></div>
+                <div className="load-5"></div>
+            </div>
+        )
+    }
+
     if(searchData.length < 1){
        return <h1 style={{color:"red", textAlign:"center",minHeight:"60vh",marginTop:"5%"}}>Nothing Found....</h1>
     }
@@ -31,15 +43,7 @@ const SearchComponent = () => {
 
         <div className='search_wrapper'>
 
-            {searchLoading && 
-            <div className="preloader">
-                <div className="load-1"></div>
-                <div className="load-2"></div>
-                <div className="load-3"></div>
-                <div className="load-4"></div>
-                <div className="load-5"></div>
-            </div>}
-
+        
             <h2 className='search_res_title'>Search Results</h2>
             <div className='products_container'>
 
