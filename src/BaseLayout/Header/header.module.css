@@ -49,24 +49,6 @@
     justify-content: flex-end;
 
 }
-.cart {
-    cursor: pointer;
-    margin-left: 15px;
-    position: relative;
-}
-.cart img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-}
-.cart>span{
-    position: absolute;
-    top: 6px;
-    left: 8px;
-    font-size: 10px;
-    color: #000;
-}
-
 
 
 

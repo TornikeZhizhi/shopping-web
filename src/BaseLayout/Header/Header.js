@@ -3,20 +3,15 @@ import { Link, NavLink } from 'react-router-dom';
 // import "./Header.css";
 import HeaderLogo from "../../assets/imgs/logo.svg";
 
-import CartIcon from "../../assets/imgs/cartIcon.svg";
 
 import classes from "./header.module.css";
 
 
 import HeaderFavourite from '../../components/HeaderFavourite/HeaderFavourite';
 import HeaderSearch from '../../components/HeaderSearch/HeaderSearch';
+import HeaderCart from '../../components/HeaderCart/HeaderCart';
 
 const Header = () => {
-
-
-
-
-
 
 
     
@@ -32,10 +27,7 @@ const Header = () => {
                 <div className={classes.cart_wrapper}>
                         <HeaderSearch/>
                         <HeaderFavourite/>
-                    <div className={classes.cart}>
-                        <img src={CartIcon} alt=""/>
-                        <span>0</span>
-                    </div>
+                        <HeaderCart/>
                 </div>
             </div>
 

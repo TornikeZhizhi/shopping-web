@@ -11,21 +11,25 @@ const CartContext = (props)=> {
 
 
 
- const addCartHandler = ()=>{
-
-
+ const addCartHandler = (data)=>{
+    if(!checkArrayIsNew(cartItem,data.title)){
+        setCartItem([...cartItem,data])
+    }
  }
- 
+
+ const checkArrayIsNew = (favArray, title)=>{
+    return favArray.some(elem => elem.title == title)
+}
 
 
 return(
-    <FavouriteTheme.Provider value={{
+    <CartTheme.Provider value={{
         cartQuantity:cartQuantity,
         cartItem:cartItem,
         addCartHandler:addCartHandler
         }}>
         {props.children}
-    </FavouriteTheme.Provider>
+    </CartTheme.Provider>
     )
     
 }

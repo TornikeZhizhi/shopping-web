@@ -8,6 +8,7 @@ import Products from './Pages/Products';
 import FavouriteContext from './Contexts/FavouritesContext';
 import Search from './Pages/Search';
 import ProductsInner from './Pages/ProductsInner';
+import CartContext from './Contexts/CartContext';
 
 
 
@@ -29,9 +30,11 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-    <FavouriteContext>
-      <RouterProvider router={router}/>
-    </FavouriteContext>
+    <CartContext>
+      <FavouriteContext>
+        <RouterProvider router={router}/>
+      </FavouriteContext>
+    </CartContext>
     </>
   );
 }

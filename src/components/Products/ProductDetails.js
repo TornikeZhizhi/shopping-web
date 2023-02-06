@@ -4,20 +4,27 @@ import "./ProductsComponent.css";
 import star from "../../assets/imgs/star.svg";
 import { FavouriteTheme } from '../../Contexts/FavouritesContext';
 import { NavLink } from 'react-router-dom';
+import { CartTheme } from '../../Contexts/CartContext';
 
 
 
 const ProductDetails = (props) => {
    
 
-    const ctx = useContext(FavouriteTheme)
+    const ctxFavourite = useContext(FavouriteTheme);
+    const ctxCart = useContext(CartTheme)
     const [ heartAnime, setHeartAnime] = useState(false);
 
     
 
-    const addFvouriteHandler = ()=>{
+    const addFavouriteHandler = ()=>{
         setHeartAnime(!heartAnime);
-        ctx.addFavToLocalStorage(props.data)
+        ctxFavourite.addFavToLocalStorage(props.data)
+
+    }
+
+    const addCart = ()=>{
+        ctxCart.addCartHandler(props.data)
 
     }
 
@@ -44,7 +51,7 @@ const ProductDetails = (props) => {
                     <img src={star} alt=""/>
          
             </div>
-            <div className='product_favourite' onClick={addFvouriteHandler}>
+            <div className='product_favourite' onClick={addFavouriteHandler}>
             <div  className={`m-favorite ` + (heartAnime ? " -active" : " ")}>
                 <div className="m-favorite__icon"></div>
 
@@ -62,7 +69,7 @@ const ProductDetails = (props) => {
             <div className='product_footer_wrapper'>
 
                 <div className='product_price'>{props.data.price} $</div>
-                <div className='add_card'>Add To Cart</div>
+                <div className='add_card' onClick={addCart}>Add To Cart</div>
             </div>
         </div>
     </div>
