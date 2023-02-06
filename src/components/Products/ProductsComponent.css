@@ -63,9 +63,8 @@
 }
 
 .product_price {
-    border-top: 1px solid #dee2e6;
-    padding-top: 5px;
-    margin-top: 11px;
+    color: green;
+ 
 }
 
 .preloader {
@@ -164,7 +163,32 @@
     font-size: 13px;
   }
   
+.product_footer_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-top: 11px;
+  border-top: 1px solid #dee2e6;
+}
 
+.add_card {
+  background-color: #007a7a;
+  border: none;
+  outline: none;
+  padding: 5px 13px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .4s;
+  font-size: 14px;
+}
+
+.add_card:hover{
+  background-color: #12a2a2;
+}
+  
   @media only screen and (max-width: 992px) {
     .products_wrapper {
         width: 48%;

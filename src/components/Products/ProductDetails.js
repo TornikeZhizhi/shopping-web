@@ -59,7 +59,11 @@ const ProductDetails = (props) => {
                 <div className='product_title'>{props.data.title}</div>
             </NavLink>
             <div className='product_text'><p>{props.data.description.slice(0,50)}...</p></div>
-            <div className='product_price'>{props.data.price} $</div>
+            <div className='product_footer_wrapper'>
+
+                <div className='product_price'>{props.data.price} $</div>
+                <div className='add_card'>Add To Cart</div>
+            </div>
         </div>
     </div>
     );
