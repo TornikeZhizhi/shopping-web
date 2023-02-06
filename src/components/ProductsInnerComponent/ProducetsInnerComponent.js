@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import star from "../../assets/imgs/star.svg";
 import 'react-image-gallery/styles/css/image-gallery.css';
 import ImageGallery from 'react-image-gallery';
 import "./ProductsInner.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { FavouriteTheme } from "../../Contexts/FavouritesContext";
 
 
 
@@ -12,6 +13,8 @@ import { useParams } from "react-router-dom";
 const ProducetsInnerComponent = () => {
 
     const params = useParams()
+    const ctx = useContext(FavouriteTheme);
+
     const [heartAnime, setHeartAnime] = useState(false)
     const [sliderImages , setSliderImages]= useState([])
     const [innerData, setInnerData] = useState([])
@@ -29,15 +32,25 @@ const ProducetsInnerComponent = () => {
     },[])
 
 
+
+
+
     const addFvouriteHandler = ()=>{
         setHeartAnime(!heartAnime);
-        // ctx.addFavToLocalStorage(props.data)
+        ctx.addFavToLocalStorage(innerData)
 
     }
 
+    useEffect(()=>{
+        let favArray = JSON.parse(localStorage.getItem("favouriteData"));
+        if(favArray?.some(elem => elem.title == innerData.title)){
+            setHeartAnime(true)
+        }
+    },[innerData])
+
     return (
         <div className="p_inner_wrapper">
-            {console.log(innerData)}
+         
             <div className="image_gallery">
                 <ImageGallery items={sliderImages} />
 
