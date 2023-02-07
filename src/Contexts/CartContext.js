@@ -13,12 +13,24 @@ const CartContext = (props)=> {
 
  const addCartHandler = (data)=>{
     if(!checkArrayIsNew(cartItem,data.title)){
-        setCartItem([...cartItem,data])
+        setCartItem([...cartItem,data]);
+
     }
  }
 
+
+
+
  const checkArrayIsNew = (favArray, title)=>{
     return favArray.some(elem => elem.title == title)
+}
+ const removeCartHandler = (id)=>{
+    const delCartData = cartItem.filter((item)=>{
+        return item.id !== id
+    })
+    setCartItem(delCartData);
+
+
 }
 
 
@@ -26,7 +38,9 @@ return(
     <CartTheme.Provider value={{
         cartQuantity:cartQuantity,
         cartItem:cartItem,
-        addCartHandler:addCartHandler
+        addCartHandler:addCartHandler,
+        removeCartHandler:removeCartHandler,
+ 
         }}>
         {props.children}
     </CartTheme.Provider>
