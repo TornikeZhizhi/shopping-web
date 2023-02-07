@@ -32,7 +32,7 @@ const ProductDetails = (props) => {
 
     useEffect(()=>{
          // add hearAnime on load
-         console.log("sjheodis")
+ 
          let favArray = JSON.parse(localStorage.getItem("favouriteData"));
          if(favArray?.some(elem => elem.title == props.data.title)){
              setHeartAnime(true)

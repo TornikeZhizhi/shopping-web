@@ -42,11 +42,15 @@ const ProducetsInnerComponent = () => {
     }
 
     useEffect(()=>{
+        console.log("sjemov")
         let favArray = JSON.parse(localStorage.getItem("favouriteData"));
         if(favArray?.some(elem => elem.title == innerData.title)){
             setHeartAnime(true)
+        }else {
+            setHeartAnime(false)
+
         }
-    },[innerData])
+    },[innerData,JSON.parse(localStorage.getItem("favouriteData"))])
 
     return (
         <div className="p_inner_wrapper">
