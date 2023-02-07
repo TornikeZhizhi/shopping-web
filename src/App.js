@@ -9,6 +9,7 @@ import FavouriteContext from './Contexts/FavouritesContext';
 import Search from './Pages/Search';
 import ProductsInner from './Pages/ProductsInner';
 import CartContext from './Contexts/CartContext';
+import Checkout from './Pages/Checkout';
 
 
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       {path:"/products/:id", element: <Products/>},
       {path:"/productsInner/:id", element: <ProductsInner/>},
       {path:"/search/:id", element: <Search/>},
+      {path:"/checkout", element: <Checkout/>},
   
     ]
   }

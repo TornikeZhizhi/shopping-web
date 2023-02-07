@@ -48,7 +48,7 @@ const HeaderCart = () => {
                         
                 </div>
                 <div className='checkout_link'>
-                            <Link to="/">Go Checkout</Link>
+                            <Link to="/checkout">Go Checkout</Link>
                         </div>
             </div>
         }
