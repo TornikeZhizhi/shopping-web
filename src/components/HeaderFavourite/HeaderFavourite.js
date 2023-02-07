@@ -8,7 +8,12 @@ const HeaderFavourite = () => {
     const [favToggler, setFavToggler] = useState(false)
 
     const ctx = useContext(FavouriteTheme)
-  
+
+    const removefavHandler = (data)=>{
+    
+        ctx.addFavToLocalStorage(data)
+
+    }
     return (
     <div className={classes.favourite_box}>
         <img onClick={()=>{
@@ -27,12 +32,15 @@ const HeaderFavourite = () => {
                    return (
                        
                        <div key={item.title} className={classes.favourite_data_body}>
-                       <img src={item.thumbnail}/>
-                       <div className={classes.favourite_data_text}>
+                          <img src={item.thumbnail}/>
+                            <div className={classes.favourite_data_text}>
 
-                           <h4>{item.title}</h4>
-                           <span>{item.price}$</span>
-                       </div>
+                                <h4>{item.title}</h4>
+                                <span>{item.price}$</span>
+                            </div>
+                            <div className={classes.remove} onClick={()=>removefavHandler(item)}>
+                                Remove
+                            </div>
                        </div>
                        )
                        

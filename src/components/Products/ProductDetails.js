@@ -14,7 +14,6 @@ const ProductDetails = (props) => {
     const ctxFavourite = useContext(FavouriteTheme);
     const ctxCart = useContext(CartTheme)
     const [ heartAnime, setHeartAnime] = useState(false);
-    const [ cartButtonToggler, setCartButtonToggler] = useState(false);
 
     
 
@@ -28,9 +27,7 @@ const ProductDetails = (props) => {
         ctxCart.addCartHandler(props.data)
     }
     
-    const removeCart = ()=>{
-        ctxCart.removeCartHandler(props.data.id)
-    }
+    
 
 
     useEffect(()=>{
@@ -77,12 +74,9 @@ const ProductDetails = (props) => {
 
                 <div className='product_price'>{props.data.price} $</div>
 
-                 {!cartButtonToggler ? 
+             
                  <div className='add_card' onClick={addCart}>Add To Cart</div>
-                     : 
-                    <div className='add_card' onClick={removeCart}>Remove To Cart</div>
-                } 
-                
+                  
             </div>
         </div>
     </div>

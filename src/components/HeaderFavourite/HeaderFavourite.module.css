@@ -25,7 +25,9 @@
     padding: 8px 10px;
    flex-grow: 1;
 }
-
+.favourite_data_text h4 {
+    font-size: 13px;
+}
 .favourite_data_text span {
     color: green;
     margin-top: 5px;
@@ -62,7 +64,7 @@
     position: absolute;
     right: 0px;
     top: 50px;
-    width: 240px;
+    width: 340px;
     z-index: 5;
 }
 
@@ -70,6 +72,7 @@
 .favourite_data_body_wrapper {
     max-height: 300px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 /* width */
 .favourite_data_body_wrapper::-webkit-scrollbar {
@@ -101,4 +104,15 @@
     .favourite_box img {
         width: 45px;
     }
+}
+
+.remove {
+
+
+    color: red;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+
 }

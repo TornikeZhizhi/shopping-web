@@ -47,9 +47,11 @@ const HeaderCart = () => {
                        
                         
                 </div>
+
+                {ctxCart.cartItem.length >0 &&
                 <div className='checkout_link'>
                             <Link to="/checkout">Go Checkout</Link>
-                        </div>
+                        </div> }
             </div>
         }
         </div>
