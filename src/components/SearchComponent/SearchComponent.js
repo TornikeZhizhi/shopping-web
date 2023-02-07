@@ -23,25 +23,34 @@ const SearchComponent = () => {
     
     if(searchLoading){
         return (
-            <div className="preloader">
+            <div className='preloader_wrapper min'>
+
+            <div className="preloader ">
                 <div className="load-1"></div>
                 <div className="load-2"></div>
                 <div className="load-3"></div>
                 <div className="load-4"></div>
                 <div className="load-5"></div>
             </div>
+            </div>
         )
     }
 
     if(searchData.length < 1){
-       return <h1 style={{color:"red", textAlign:"center",minHeight:"60vh",marginTop:"5%"}}>Nothing Found....</h1>
+
+       return(
+           <div className='search_error min'>
+            <h1>Nothing Found....</h1>
+           </div>
+       ) 
+       
     }
    
 
 
     return (  
 
-        <div className='search_wrapper'>
+        <div className='search_wrapper min'>
 
         
             <h2 className='search_res_title'>Search Results</h2>

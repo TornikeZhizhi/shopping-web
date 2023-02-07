@@ -2,5 +2,18 @@
 
     text-align: center;
     font-size: 30px;
-    margin: 20px 0;
+    padding: 20px 0;
+    margin: 0;
 }
+
+.search_error {
+    width: 100%;
+    padding-top: 5%;
+}
+
+.search_error h1 {
+    color: red;
+    text-align: center;
+    
+}
+

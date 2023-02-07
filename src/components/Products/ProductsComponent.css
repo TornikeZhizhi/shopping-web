@@ -66,10 +66,12 @@
     color: green;
  
 }
-
+.preloader_wrapper {
+  padding-top: 5%;
+}
 .preloader {
     position: relative;
-    margin: 100px auto;
+    margin: 0px auto;
     width: 200px;
     height: 200px;
 
