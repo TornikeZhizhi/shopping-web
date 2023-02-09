@@ -8,6 +8,7 @@ const CartContext = (props)=> {
   
  const [cartQuantity, setCartQuantity] = useState(0);
  const [cartItem, setCartItem] = useState([])
+ const [sumPrice, setSumPrice] = useState(0)
 
     const [snackBar, setSnackBar] = useState(false)
     const [snackBar2, setSnackBar2] = useState(false)
@@ -24,8 +25,17 @@ const CartContext = (props)=> {
         setSnackBar2(false)
     },500)
 
-    
  }
+
+ useEffect(()=>{
+    // count product sum price
+    let productSum = 0;
+    cartItem.map((item)=>{
+        productSum += item.price
+    })
+    setSumPrice(productSum)
+
+ },[cartItem])
 
 
 
@@ -50,7 +60,8 @@ return(
         addCartHandler:addCartHandler,
         removeCartHandler:removeCartHandler,
         snackBar:snackBar,
-        snackBar2:snackBar2
+        snackBar2:snackBar2,
+        sumPrice:sumPrice
         }}>
         {props.children}
     </CartTheme.Provider>

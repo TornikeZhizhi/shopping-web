@@ -39,7 +39,10 @@ const CheckoutComponent = () => {
 
             })}
             
-
+            <div className='checkout_footer'>
+                <div>Sum</div>
+                <span>{ctxCart.sumPrice}$</span>
+            </div>
         </div>
     );
 };

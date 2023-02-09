@@ -49,3 +49,18 @@
     color: red;
     text-align: center;
 }
+
+.checkout_footer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0 50px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.checkout_footer span{
+    margin-left: 10px;
+    color: green;
+}

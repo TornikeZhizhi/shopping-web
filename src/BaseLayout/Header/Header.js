@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 // import "./Header.css";
 import HeaderLogo from "../../assets/imgs/logo.svg";
@@ -12,8 +12,11 @@ import HeaderSearch from '../../components/HeaderSearch/HeaderSearch';
 import HeaderCart from '../../components/HeaderCart/HeaderCart';
 import CustomizedSnackbars from '../../Helpers/SnackBar/SnackBar';
 
-const Header = () => {
 
+
+
+
+const Header = () => {
 
     
     return (
