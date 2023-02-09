@@ -10,6 +10,7 @@ import classes from "./header.module.css";
 import HeaderFavourite from '../../components/HeaderFavourite/HeaderFavourite';
 import HeaderSearch from '../../components/HeaderSearch/HeaderSearch';
 import HeaderCart from '../../components/HeaderCart/HeaderCart';
+import CustomizedSnackbars from '../../Helpers/SnackBar/SnackBar';
 
 const Header = () => {
 
@@ -17,7 +18,7 @@ const Header = () => {
     
     return (
         <div className={classes.header}>
-            
+            <CustomizedSnackbars/>
             <div className={classes.header_up_wrapper}>
                 <div className={classes.header_logo}>
                     <Link to="/">

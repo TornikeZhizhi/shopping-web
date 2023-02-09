@@ -5,7 +5,7 @@ import star from "../../assets/imgs/star.svg";
 import { FavouriteTheme } from '../../Contexts/FavouritesContext';
 import { NavLink } from 'react-router-dom';
 import { CartTheme } from '../../Contexts/CartContext';
-
+import Rating from '@mui/material/Rating';
 
 
 const ProductDetails = (props) => {
@@ -52,11 +52,11 @@ const ProductDetails = (props) => {
                   <img src={props.data.thumbnail} alt=''/>
               </NavLink>
             <div className='product_rating'>
-                <span>
+                <span className='rating_text'>
                     {props.data.rating} 
                 </span>
-       
-                    <img src={star} alt=""/>
+                <Rating name="half-rating-read" defaultValue={props.data.rating} precision={0.5} readOnly  size="small"/>
+                    {/* <img src={star} alt=""/> */}
          
             </div>
             <div className='product_favourite' onClick={addFavouriteHandler}>

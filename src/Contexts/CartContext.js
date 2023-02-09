@@ -9,13 +9,22 @@ const CartContext = (props)=> {
  const [cartQuantity, setCartQuantity] = useState(0);
  const [cartItem, setCartItem] = useState([])
 
-
+    const [snackBar, setSnackBar] = useState(false)
+    const [snackBar2, setSnackBar2] = useState(false)
 
  const addCartHandler = (data)=>{
     if(!checkArrayIsNew(cartItem,data.title)){
         setCartItem([...cartItem,data]);
-
+        setSnackBar(true)
+    }else {
+        setSnackBar2(true)
     }
+    setTimeout(function(){
+        setSnackBar(false)
+        setSnackBar2(false)
+    },500)
+
+    
  }
 
 
@@ -40,7 +49,8 @@ return(
         cartItem:cartItem,
         addCartHandler:addCartHandler,
         removeCartHandler:removeCartHandler,
- 
+        snackBar:snackBar,
+        snackBar2:snackBar2
         }}>
         {props.children}
     </CartTheme.Provider>
