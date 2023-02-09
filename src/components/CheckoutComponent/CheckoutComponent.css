@@ -28,7 +28,7 @@
     object-fit: contain;
 }
 .checkout_body {
-    padding: 5px 0 0 20px;
+    padding: 5px 145px 0 20px;
 }
 .checkout_body h3{
     color: green;
@@ -58,6 +58,9 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 25px;
+    position: sticky;
+    bottom: 0;
+    background: #ffff;
 }
 
 .checkout_footer span{

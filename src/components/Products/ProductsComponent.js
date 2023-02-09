@@ -15,6 +15,7 @@ const ProductsComponent = () => {
         setIsLoading(true)
         axios.get(`https:dummyjson.com/products/category/${params.id}`)
         .then((response)=>{
+                console.log(response)
                  setIsLoading(false)
                 return setData(response.data)
         })
