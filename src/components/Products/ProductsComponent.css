@@ -374,6 +374,6 @@
     height: 30px;
   }
   .css-1lauo1g-MuiRating-root {
-    font-size: 14px;
+    font-size: 14px !important;
   }
   }
