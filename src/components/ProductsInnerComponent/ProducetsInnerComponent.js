@@ -20,7 +20,10 @@ const ProducetsInnerComponent = () => {
     const [sliderImages , setSliderImages]= useState([])
     const [innerData, setInnerData] = useState([])
 
+    const [isLoading, setIsLoading] = useState(true) 
+
     useEffect(()=>{
+        setIsLoading(true)
         axios.get(`https://dummyjson.com/products/${params.id}`)
         .then(response => {
             let newImages = []
@@ -29,12 +32,14 @@ const ProducetsInnerComponent = () => {
             })
             setSliderImages(newImages);
             setInnerData(response.data)
+
+            setIsLoading(false)
         })
 
         window.scrollTo(0, 0)
          
   
-    },[])
+    },[params.id])
 
 
 
@@ -52,7 +57,6 @@ const ProducetsInnerComponent = () => {
     
 
     useEffect(()=>{
-        console.log("sjemov")
         let favArray = JSON.parse(localStorage.getItem("favouriteData"));
         if(favArray?.some(elem => elem.title == innerData.title)){
             setHeartAnime(true)
@@ -63,7 +67,23 @@ const ProducetsInnerComponent = () => {
     },[innerData,JSON.parse(localStorage.getItem("favouriteData"))])
 
     return (
-        <div className="p_inner_wrapper min">
+
+        <>
+           {isLoading && 
+            <div className='preloader_wrapper min'>
+
+            <div className="preloader ">
+                <div className="load-1"></div>
+                <div className="load-2"></div>
+                <div className="load-3"></div>
+                <div className="load-4"></div>
+                <div className="load-5"></div>
+            </div>
+            </div>}
+         
+        {!isLoading && 
+            <div className="p_inner_wrapper min">
+
          
             <div className="image_gallery">
                 <ImageGallery items={sliderImages} />
@@ -97,6 +117,9 @@ const ProducetsInnerComponent = () => {
                     </div>
                 </div>
         </div>
+        }
+        
+        </>
     );
 };
 

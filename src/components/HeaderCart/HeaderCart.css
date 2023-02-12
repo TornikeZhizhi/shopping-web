@@ -10,12 +10,12 @@
     margin-left: 10px;
     position: relative;
 }
-.cart img {
+.cartimg_box img {
     width: 26px;
     height: 26px;
     object-fit: contain;
 }
-.cart>span{
+.cartimg_box>span{
     position: absolute;
     top: 8px;
     left: 10px;

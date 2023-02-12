@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartIcon from "../../assets/imgs/cartIcon.svg";
 import { CartTheme } from '../../Contexts/CartContext';
+import { useNavigate } from 'react-router-dom';
 import "./HeaderCart.css";
 
 
@@ -10,18 +11,29 @@ const HeaderCart = () => {
     const [cartToggler, setCartToggler] = useState(false)
 
     const ctxCart = useContext(CartTheme);
-    
+    const navigate = useNavigate()
+
+    // style 
     const style = {
         color:ctxCart.cartItem.length > 0 ? "green" : " "
     }
 
+    const cartLinkHandler = (id)=>{
+
+        navigate(`/productsInner/${id}`)
+
+    }
+
     return (
-        <div className="cart" onClick={()=>{
+        <div className="cart" > 
+            <div className='cartimg_box' onClick={()=>{
             setCartToggler(!cartToggler)
 
         }}>
+
             <img src={CartIcon} alt=""/>
             <span style={style}>{ctxCart.cartItem.length}</span>
+            </div>
         
             {cartToggler && 
                 <div className="favourite_data_container">
@@ -34,7 +46,7 @@ const HeaderCart = () => {
                         return (
                             
                             <div key={item.title} className="favourite_data_body">
-                            <img src={item.thumbnail}/>
+                            <img onClick={()=>cartLinkHandler(item.id)} src={item.thumbnail}/>
                             <div className="favourite_data_text">
 
                                 <h4>{item.title}</h4>
