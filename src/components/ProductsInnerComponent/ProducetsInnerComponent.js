@@ -6,6 +6,7 @@ import "./ProductsInner.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { FavouriteTheme } from "../../Contexts/FavouritesContext";
+import { CartTheme } from "../../Contexts/CartContext";
 
 
 
@@ -14,10 +15,11 @@ const ProducetsInnerComponent = () => {
 
     const params = useParams()
     const ctx = useContext(FavouriteTheme);
-
+    const ctxCart = useContext(CartTheme);
     const [heartAnime, setHeartAnime] = useState(false)
     const [sliderImages , setSliderImages]= useState([])
     const [innerData, setInnerData] = useState([])
+
     useEffect(()=>{
         axios.get(`https://dummyjson.com/products/${params.id}`)
         .then(response => {
@@ -28,6 +30,9 @@ const ProducetsInnerComponent = () => {
             setSliderImages(newImages);
             setInnerData(response.data)
         })
+
+        window.scrollTo(0, 0)
+         
   
     },[])
 
@@ -40,6 +45,11 @@ const ProducetsInnerComponent = () => {
         ctx.addFavToLocalStorage(innerData)
 
     }
+
+    const addCart = ()=>{
+        ctxCart.addCartHandler(innerData)
+    }
+    
 
     useEffect(()=>{
         console.log("sjemov")
@@ -83,7 +93,7 @@ const ProducetsInnerComponent = () => {
                             <span className="m-favorite__smallIcon"></span>
                       </div>
                         </button> 
-                       <button className="card_button">Add TO Cart</button>
+                       <button className="card_button" onClick={addCart}>Add TO Cart</button>
                     </div>
                 </div>
         </div>

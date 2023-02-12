@@ -18,7 +18,7 @@
 .cart>span{
     position: absolute;
     top: 8px;
-    left: 9px;
+    left: 10px;
     font-size: 12px;
     color: #000;
 }
@@ -149,5 +149,8 @@
 @media only screen and (max-width: 992px) {
     .favourite_box img {
         width: 45px;
+    }
+    .cart {
+        margin-left: 0;
     }
 }

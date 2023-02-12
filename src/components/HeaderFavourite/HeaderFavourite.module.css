@@ -10,7 +10,7 @@
 
 .favourite_box>span {
     position: absolute;
-    top: 17px;
+    top: 18px;
     left: 50%;
     transform: translateX(-50%);
     color: red;
