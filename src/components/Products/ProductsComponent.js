@@ -13,9 +13,9 @@ const ProductsComponent = () => {
 
     useEffect(()=>{
         setIsLoading(true)
-        axios.get(`https:dummyjson.com/products/category/${params.id}`)
+        axios.get(`https://dummyjson.com/products/category/${params.id}`)
         .then((response)=>{
-                console.log(response)
+                console.log(response, "dd")
                  setIsLoading(false)
                 return setData(response.data)
         })

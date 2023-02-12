@@ -19,7 +19,7 @@ const ProducetsInnerComponent = () => {
     const [sliderImages , setSliderImages]= useState([])
     const [innerData, setInnerData] = useState([])
     useEffect(()=>{
-        axios.get(`dummyjson.com/products/${params.id}`)
+        axios.get(`https://dummyjson.com/products/${params.id}`)
         .then(response => {
             let newImages = []
             response.data.images.map((item)=>{
