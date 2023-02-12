@@ -56,11 +56,13 @@ const SearchComponent = () => {
             <h2 className='search_res_title'>Search Results</h2>
             <div className='products_container'>
 
-            
+            <div className='products_parent'>
+
                 {!searchLoading && searchData?.map((data,index)=>{
                     return <ProductDetails  data={data} key={index}/>
                 })}
             </div>
+        </div>
         </div>
     );
 };

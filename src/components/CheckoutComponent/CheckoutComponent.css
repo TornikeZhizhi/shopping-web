@@ -67,3 +67,27 @@
     margin-left: 10px;
     color: green;
 }
+
+@media only screen and (max-width: 992px) {
+
+    
+    .checkout_wrapper {
+        flex-direction: column;
+    }
+    
+    .checkout_body {
+        padding: 10px;
+    }
+
+.remove_from_cart {
+    position: unset;
+    text-align: center;
+    width: 100%;
+    margin: 15px 0 0;
+}
+
+.checkout_img {
+    margin: 0 auto;
+    width: 100%;
+}
+}

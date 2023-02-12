@@ -53,7 +53,7 @@ const ProducetsInnerComponent = () => {
     },[innerData,JSON.parse(localStorage.getItem("favouriteData"))])
 
     return (
-        <div className="p_inner_wrapper">
+        <div className="p_inner_wrapper min">
          
             <div className="image_gallery">
                 <ImageGallery items={sliderImages} />
