@@ -48,8 +48,14 @@
     font-size: 52px;
     letter-spacing: 2px;
 }
+.categories_title {
+    display: flex;
+}
 
-
+.categories_title a {
+    color: #000;
+    text-decoration: none;
+}
 @media only screen and (max-width: 992px) {
    
     .category_box_wrapper {

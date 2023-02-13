@@ -10,7 +10,7 @@ import Search from './Pages/Search';
 import ProductsInner from './Pages/ProductsInner';
 import CartContext from './Contexts/CartContext';
 import Checkout from './Pages/Checkout';
-
+import AllProducts from './Pages/AllProducts';
 
 
 const router = createBrowserRouter([
@@ -19,6 +19,7 @@ const router = createBrowserRouter([
     errorElement:<Error/>,
     children:[
       {path:"/", element: <Home/>},
+      {path:"/all-products", element: <AllProducts/>},
       {path:"/products/:id", element: <Products/>},
       {path:"/productsInner/:id", element: <ProductsInner/>},
       {path:"/search/:id", element: <Search/>},

@@ -6,7 +6,7 @@ import homeDecoration from "../../assets/imgs/home_decoration.jpg";
 import dress from "../../assets/imgs/dress.jpg";
 import manShoes from "../../assets/imgs/man-shoes.jpg";
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 
 const Categories = () => {
@@ -16,7 +16,9 @@ const Categories = () => {
     return (
         <div className='category_container'>
             <div className='categories_title'>
-                <h2>All Categories</h2>
+                <Link to="/all-products">
+                    <h2 style={{cursor:"pointer"}}>All Categories</h2>
+                </Link>
             </div>
             <div className='categories_wrapper'>
                 <div className='category_box_wrapper' 
