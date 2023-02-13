@@ -49,7 +49,6 @@ const CartContext = (props)=> {
     })
     setCartItem(delCartData);
 
-
 }
 
 
