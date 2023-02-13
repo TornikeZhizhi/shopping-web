@@ -82,7 +82,9 @@ const HeaderCart = () => {
 
                 {ctxCart.cartItem.length >0 &&
                 <div className='checkout_link'>
-                            <Link to="/checkout">Go Checkout</Link>
+                            <Link to="/checkout" onClick={()=>{
+                                 setCartToggler(false)
+                            }}>Go Checkout</Link>
                         </div> }
             </div>
         }
