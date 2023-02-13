@@ -12,8 +12,9 @@ const HeaderSearch = () => {
 
     const searchHandler =(e)=>{
         e.preventDefault()
+
         navigate(`/search/${inputValue.current.value}`)
-        
+            
     }
 
     return (
