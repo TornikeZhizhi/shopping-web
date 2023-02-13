@@ -21,7 +21,6 @@ const SearchComponent = () => {
         const productsQuery = searchParams.get("product")
 
 
-        console.log(productsQuery)
         setSearchLoading(true)
         axios.get(`https://dummyjson.com/products/search?q=${productsQuery}`)
         .then(res => {
