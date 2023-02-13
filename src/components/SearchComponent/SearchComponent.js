@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,useSearchParams } from 'react-router-dom';
 import axios from "axios";
 import ProductDetails from '../Products/ProductDetails';
 import "../Products/ProductsComponent.css";
@@ -9,17 +9,26 @@ const SearchComponent = () => {
 
 
     const [searchData, setSearchData] = useState([])
-    const params = useParams()
+    // const params = useParams()
     const [searchLoading, setSearchLoading] = useState(true)
+    
+    const [searchParams, setSearchParams] = useSearchParams()
 
+
+    
     useEffect(()=>{
+
+        const productsQuery = searchParams.get("product")
+
+
+        console.log(productsQuery)
         setSearchLoading(true)
-        axios.get(`https://dummyjson.com/products/search?q=${params.id}`)
+        axios.get(`https://dummyjson.com/products/search?q=${productsQuery}`)
         .then(res => {
             setSearchLoading(false)
             return setSearchData(res.data.products)
         })
-    },[params.id]);
+    },[searchParams.get("product")]);
 
     
     if(searchLoading){
