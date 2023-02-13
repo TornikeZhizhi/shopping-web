@@ -104,6 +104,10 @@
     .favourite_box img {
         width: 45px;
     }
+
+    .favourite_data_container {
+        width: 260px;
+    }
 }
 
 .remove {
