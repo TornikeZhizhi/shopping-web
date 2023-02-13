@@ -6,21 +6,13 @@ import ProductDetails from './ProductDetails';
 import "./ProductsComponent.css";
 import Loader from '../../Helpers/Loader/Loader';
 
+import DataFetchHook from '../../Hooks/DataFetchHook.js/DataFetchHook';
 
 const ProductsComponent = () => {
-    const [data, setData] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
+   
     const params = useParams()
-
-    useEffect(()=>{
-        setIsLoading(true)
-        axios.get(`https://dummyjson.com/products/category/${params.id}`)
-        .then((response)=>{
-                 setIsLoading(false)
-                return setData(response.data)
-        })
-          
-    },[params])
+    const {data,isLoading} = DataFetchHook("https://dummyjson.com/products/category/",params.id)
+    console.log(data)
 
     if(isLoading){
         return (

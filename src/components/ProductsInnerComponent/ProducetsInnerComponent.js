@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import { FavouriteTheme } from "../../Contexts/FavouritesContext";
 import { CartTheme } from "../../Contexts/CartContext";
 import Loader from "../../Helpers/Loader/Loader";
-
+import DataFetchHook from "../../Hooks/DataFetchHook.js/DataFetchHook";
 
 
 
@@ -19,53 +19,43 @@ const ProducetsInnerComponent = () => {
     const ctxCart = useContext(CartTheme);
     const [heartAnime, setHeartAnime] = useState(false)
     const [sliderImages , setSliderImages]= useState([])
-    const [innerData, setInnerData] = useState([])
 
-    const [isLoading, setIsLoading] = useState(true) 
+
+
+    const {data, isLoading} = DataFetchHook("https://dummyjson.com/products/",params.id);
 
     useEffect(()=>{
-        setIsLoading(true)
-        axios.get(`https://dummyjson.com/products/${params.id}`)
-        .then(response => {
+ 
             let newImages = []
-            response.data.images.map((item)=>{
-                newImages.push({original:item,thumbnail:item})
-            })
-            setSliderImages(newImages);
-            setInnerData(response.data)
+                data.images?.map((item)=>{
+                    newImages.push({original:item,thumbnail:item})
+                })
+              setSliderImages(newImages);
+       
+    },[data])
 
-            setIsLoading(false)
-        })
-
-        window.scrollTo(0, 0)
-         
-  
-    },[params.id])
-
-
-
-
+    
 
     const addFvouriteHandler = ()=>{
         setHeartAnime(!heartAnime);
-        ctx.addFavToLocalStorage(innerData)
+        ctx.addFavToLocalStorage(data)
 
     }
 
     const addCart = ()=>{
-        ctxCart.addCartHandler(innerData)
+        ctxCart.addCartHandler(data)
     }
     
 
     useEffect(()=>{
         let favArray = JSON.parse(localStorage.getItem("favouriteData"));
-        if(favArray?.some(elem => elem.title == innerData.title)){
+        if(favArray?.some(elem => elem.title == data.title)){
             setHeartAnime(true)
         }else {
             setHeartAnime(false)
 
         }
-    },[innerData,JSON.parse(localStorage.getItem("favouriteData"))])
+    },[data,JSON.parse(localStorage.getItem("favouriteData"))])
 
     return (
 
@@ -84,15 +74,15 @@ const ProducetsInnerComponent = () => {
             </div>
             
             <div className="p_inner_body">
-                    <div className="p_inner_title">{innerData.title}</div>
+                    <div className="p_inner_title">{data.title}</div>
                     <div className="p_inner_rating">
                          <span>
-                            {innerData.rating}
+                            {data.rating}
                         </span> 
                           <img src={star} alt=""/>
                     </div>
-                    <div className="p_inner_price">{innerData.price}$</div>
-                    <div className="p_inner_description">{innerData.description}</div>
+                    <div className="p_inner_price">{data.price}$</div>
+                    <div className="p_inner_description">{data.description}</div>
 
 
                     <div className="p_inner_checkout_button">
