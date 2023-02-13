@@ -7,6 +7,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { FavouriteTheme } from "../../Contexts/FavouritesContext";
 import { CartTheme } from "../../Contexts/CartContext";
+import Loader from "../../Helpers/Loader/Loader";
 
 
 
@@ -70,16 +71,8 @@ const ProducetsInnerComponent = () => {
 
         <>
            {isLoading && 
-            <div className='preloader_wrapper min'>
-
-            <div className="preloader ">
-                <div className="load-1"></div>
-                <div className="load-2"></div>
-                <div className="load-3"></div>
-                <div className="load-4"></div>
-                <div className="load-5"></div>
-            </div>
-            </div>}
+            <Loader/>
+            }
          
         {!isLoading && 
             <div className="p_inner_wrapper min">

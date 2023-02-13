@@ -4,6 +4,7 @@ import axios from "axios";
 import ProductDetails from '../Products/ProductDetails';
 import "../Products/ProductsComponent.css";
 import "./SearchComponent.css";
+import Loader from '../../Helpers/Loader/Loader';
 const SearchComponent = () => {
 
 
@@ -23,16 +24,7 @@ const SearchComponent = () => {
     
     if(searchLoading){
         return (
-            <div className='preloader_wrapper min'>
-
-            <div className="preloader ">
-                <div className="load-1"></div>
-                <div className="load-2"></div>
-                <div className="load-3"></div>
-                <div className="load-4"></div>
-                <div className="load-5"></div>
-            </div>
-            </div>
+          <Loader/>
         )
     }
 
