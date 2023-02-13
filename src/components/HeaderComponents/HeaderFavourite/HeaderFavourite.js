@@ -1,7 +1,7 @@
 import React, { useContext, useState ,useEffect} from 'react';
 import classes from "./HeaderFavourite.module.css";
-import heart from "../../assets/imgs/heart.svg";
-import { FavouriteTheme } from '../../Contexts/FavouritesContext';
+import heart from "../../../assets/imgs/heart.svg";
+import { FavouriteTheme } from "../../../Contexts/FavouritesContext.js";
 import { useNavigate } from 'react-router-dom';
 const HeaderFavourite = () => {
 

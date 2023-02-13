@@ -7,9 +7,9 @@ import HeaderLogo from "../../assets/imgs/logo.svg";
 import classes from "./header.module.css";
 
 
-import HeaderFavourite from '../../components/HeaderFavourite/HeaderFavourite';
-import HeaderSearch from '../../components/HeaderSearch/HeaderSearch';
-import HeaderCart from '../../components/HeaderCart/HeaderCart';
+import HeaderFavourite from '../../components/HeaderComponents/HeaderFavourite/HeaderFavourite';
+import HeaderSearch from '../../components/HeaderComponents/HeaderSearch/HeaderSearch';
+import HeaderCart from '../../components/HeaderComponents/HeaderCart/HeaderCart';
 import CustomizedSnackbars from '../../Helpers/SnackBar/SnackBar';
 
 

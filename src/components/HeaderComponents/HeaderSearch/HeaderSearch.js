@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import  axios from "axios";
-import SearchIcon from "../../assets/imgs/search_icon.svg";
+import SearchIcon from "../../../assets/imgs/search_icon.svg";
 import classes from "./HeaderSearch.module.css";
 import { useNavigate } from 'react-router-dom';
 

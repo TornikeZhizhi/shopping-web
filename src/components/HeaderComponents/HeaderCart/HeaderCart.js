@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import CartIcon from "../../assets/imgs/cartIcon.svg";
-import { CartTheme } from '../../Contexts/CartContext';
+import CartIcon from "../../../assets/imgs/cartIcon.svg";
+import { CartTheme } from '../../../Contexts/CartContext';
 import { useNavigate } from 'react-router-dom';
 import "./HeaderCart.css";
 
