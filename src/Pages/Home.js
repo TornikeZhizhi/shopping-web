@@ -11,13 +11,6 @@ const Home = () => {
 
     return (
         <div>
-{/*        
-            <button onClick={()=>{
-                navigate("/contact")
-            }}>
-             to contact
-
-            </button> */}
 
             <HomeSlider/>
            <Categories/>

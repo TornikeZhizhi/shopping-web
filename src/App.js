@@ -11,6 +11,7 @@ import ProductsInner from './Pages/ProductsInner';
 import CartContext from './Contexts/CartContext';
 import Checkout from './Pages/Checkout';
 import AllProducts from './Pages/AllProducts';
+import Favourite from './Pages/Favourite';
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       {path:"/productsInner/:id", element: <ProductsInner/>},
       {path:"/search", element: <Search/>},
       {path:"/checkout", element: <Checkout/>},
+      {path:"/favourites", element: <Favourite/>},
   
     ]
   }

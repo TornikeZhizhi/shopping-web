@@ -3,6 +3,7 @@ import classes from "./HeaderFavourite.module.css";
 import heart from "../../../assets/imgs/heart.svg";
 import { FavouriteTheme } from "../../../Contexts/FavouritesContext.js";
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const HeaderFavourite = () => {
 
     const [favToggler, setFavToggler] = useState(false)
@@ -68,6 +69,11 @@ const HeaderFavourite = () => {
                        )
                        
                    })}
+                   <div className='checkout_link'>
+                            <Link to="/favourites" onClick={()=>{
+                                 setFavToggler(false)
+                            }}>Go Favourites</Link>
+                    </div> 
            </div>
        </div>
         }
