@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CartTheme } from '../../Contexts/CartContext';
 import { FavouriteTheme } from '../../Contexts/FavouritesContext';
 import "./FavouriteComponent.css";
@@ -13,8 +13,16 @@ const FavouriteComponent = () => {
         ctxFavourite.addFavToLocalStorage(data)
     }
 
+    // useEffect(()=>{
+    //     if(ctxCart.snackBar2){
+    //         console.log("waishala")
+    //         // removeCart();
+    //     }
+
+    // },[ctxCart.snackBar2])
+
     const moveCard=(data)=>{
-        removeCart(data);
+        
         ctxCart.addCartHandler(data)
     }
 
@@ -26,7 +34,7 @@ const FavouriteComponent = () => {
         {ctxFavourite.favItem.map((item,index)=>{
 
             return (
-                <div className='checkout_wrapper'>
+                <div className='checkout_wrapper' key={index}>
                     <div className='checkout_img'>
                         <img src={item.thumbnail} alt="" />
                     </div>

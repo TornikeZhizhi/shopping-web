@@ -69,11 +69,16 @@ const HeaderFavourite = () => {
                        )
                        
                    })}
+
+                   {ctx.favItem.length > 0 && 
                    <div className='checkout_link'>
-                            <Link to="/favourites" onClick={()=>{
-                                 setFavToggler(false)
-                            }}>Go Favourites</Link>
-                    </div> 
+                   <Link to="/favourites" onClick={()=>{
+                        setFavToggler(false)
+                   }}>Go Favourites</Link>
+                   </div> 
+                   
+                   }
+                   
            </div>
        </div>
         }

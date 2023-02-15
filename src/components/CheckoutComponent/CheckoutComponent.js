@@ -22,7 +22,7 @@ const CheckoutComponent = () => {
             {ctxCart.cartItem.map((item,index)=>{
 
                 return (
-                    <div className='checkout_wrapper'>
+                    <div className='checkout_wrapper' key={index}>
                         <div className='checkout_img'>
                             <img src={item.thumbnail} alt="" />
                         </div>
