@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import "./Footer.css";
 const Footer = () => {
-    return (
-        <footer>
-            <span>Created By Tornike Zhizhiasvhili</span>
-        </footer>
-    );
+  return (
+    <footer>
+      <span>Created By Ani Gamtsemlidze</span>
+    </footer>
+  );
 };
 
 export default Footer;
